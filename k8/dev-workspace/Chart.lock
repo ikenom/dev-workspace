@@ -1,0 +1,12 @@
+dependencies:
+- name: ingress-nginx
+  repository: https://kubernetes.github.io/ingress-nginx
+  version: 2.7.0
+- name: docker-registry
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 1.9.3
+- name: chartmuseum
+  repository: https://kubernetes-charts.storage.googleapis.com
+  version: 2.13.0
+digest: sha256:ff299f6540dc971e106c8c9c16b24b4d60f8b4d1e1db1665f88cc1c0ced58aa3
+generated: "2020-06-22T04:08:46.620258-07:00"

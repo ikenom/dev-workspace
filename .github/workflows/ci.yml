@@ -27,4 +27,5 @@ jobs:
       with:
         # A personal access token needed to push your site after it has been built.
         access-token: 9b2e4aefb6778a5f7cc7e86b1a3c61f17b322afa
+        destination-repo: helm-test
         source-charts-folder: k8/charts

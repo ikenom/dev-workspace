@@ -2,7 +2,7 @@
 
 HELM_CHART_NAME=dev-workspaces
 docker build -t deploy-helm .
-docker run
+docker run \
   --env HELM_CHART_NAME=$HELM_CHART_NAME) \
   --env CONTAINER_REGISTRY=$(CONTAINER_REGISTRY) \
   --env CONTAINER_REGISTRY_USERNAME=$(CONTAINER_REGISTRY_USERNAME) \

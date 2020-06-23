@@ -1,13 +1,9 @@
-FROM dtzar/helm-kubectl
+FROM alpine:3.12
 
-ENV APP_HOME /app
+RUN apk add docker
+
+ENV APP_HOME /scripts
 RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
-COPY . .
-
-ENV HELM_EXPERIMENTAL_OCI 1
-COPY scripts/deploy-helm-entrypoint.sh ${APP_HOME}/k8
-WORKDIR ${APP_HOME}/k8
-
-ENTRYPOINT ["bash", "deploy-helm-entrypoint.sh"]
+COPY scripts .

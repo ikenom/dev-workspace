@@ -1,0 +1,2 @@
+FROM ikenom.azurecr.io/push-helm-chart
+COPY k8 .

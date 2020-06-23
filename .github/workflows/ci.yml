@@ -22,4 +22,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: Deploy Helm Charts
         run: |
-          scripts/push-helm-chart.sh -c ${{ secrets.CONTAINER_REGISTRY }} -u ${{ secrets.CONTAINER_REGISTRY_USERNAME }} -p ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+          scripts/push-helm-chart.sh \
+            -c ${{ secrets.CONTAINER_REGISTRY }} \
+            -u ${{ secrets.CONTAINER_REGISTRY_USERNAME }} \
+            -p ${{ secrets.CONTAINER_REGISTRY_PASSWORD }} \
+            -dc "$CONTAINER_REGISTRY/dev-workspace" \
+            -du ${{ secrets.GH_CONTAINER_REGISTRY_USERNAME }} \
+            -dp ${{ secrets.GH_CONTAINER_REGISTRY_PASSWORD }} \
+        env:
+          CONTAINER_REGISTRY: ${{ secrets.GH_CONTAINER_REGISTRY }}

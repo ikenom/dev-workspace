@@ -1,6 +1,6 @@
 #!/bin/bash
 
-HELM_CHART_NAME=dev-workspaces
+HELM_CHART_NAME=dev-workspace
 docker build -t deploy-helm .
 docker run \
   --env HELM_CHART_NAME=$HELM_CHART_NAME \

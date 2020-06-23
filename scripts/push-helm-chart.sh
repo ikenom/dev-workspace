@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Parse arguments.
-while getopts 'c:u:n:p:du:dc:dp:' arg; do
+while getopts 'c:u:n:p:r:s:v:' arg; do
   case "${arg}" in
     c) CONTAINER_REGISTRY=${OPTARG} ;;
     u) CONTAINER_REGISTRY_USERNAME=${OPTARG} ;;
     p) CONTAINER_REGISTRY_PASSWORD=${OPTARG} ;;
-    dc) DOCKER_CONTAINER_REGISTRY=${OPTARG} ;;
-    du) DOCKER_CONTAINER_REGISTRY_USERNAME=${OPTARG} ;;
-    dp) DOCKER_CONTAINER_REGISTRY_PASSWORD=${OPTARG} ;;
+    r) DOCKER_CONTAINER_REGISTRY=${OPTARG} ;;
+    s) DOCKER_CONTAINER_REGISTRY_USERNAME=${OPTARG} ;;
+    v) DOCKER_CONTAINER_REGISTRY_PASSWORD=${OPTARG} ;;
   esac
 done
 

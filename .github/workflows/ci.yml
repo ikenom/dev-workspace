@@ -22,8 +22,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Deploy Helm Charts
         run: |
-          scripts/deploy-helm.sh
-        env:
-          CONTAINER_REGISTRY: ${{ secrets.CONTAINER_REGISTRY }}
-          CONTAINER_REGISTRY_USERNAME: ${{ secrets.CONTAINER_REGISTRY_USERNAME }}
-          CONTAINER_REGISTRY_PASSWORD: ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}
+          scripts/push-helm-chart.sh -c ${{ secrets.CONTAINER_REGISTRY }} -u ${{ secrets.CONTAINER_REGISTRY_USERNAME }} -p ${{ secrets.CONTAINER_REGISTRY_PASSWORD }}

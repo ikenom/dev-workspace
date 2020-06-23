@@ -2,9 +2,6 @@
 
 set -e
 
-echo $CONTAINER_REGISTRY_USERNAME
-echo $CONTAINER_REGISTRY_PASSWORD
-
 # Parse arguments.
 while getopts 'c:u:n:p:' arg; do
   case "${arg}" in

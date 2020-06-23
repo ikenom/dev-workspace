@@ -6,9 +6,10 @@ while getopts 'c:u:n:p:' arg; do
     c) CONTAINER_REGISTRY=${OPTARG} ;;
     u) CONTAINER_REGISTRY_USERNAME=${OPTARG} ;;
     p) CONTAINER_REGISTRY_PASSWORD=${OPTARG} ;;
-    n) HELM_CHART_NAME=${OPTARG} ;;
   esac
 done
+
+HELM_CHART_NAME=dev-workspace
 
 echo $CONTAINER_REGISTRY_PASSWORD | docker login ${CONTAINER_REGISTRY} \
   --username $CONTAINER_REGISTRY_USERNAME \

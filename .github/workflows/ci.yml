@@ -26,8 +26,8 @@ jobs:
             -c ${{ secrets.CONTAINER_REGISTRY }} \
             -u ${{ secrets.CONTAINER_REGISTRY_USERNAME }} \
             -p ${{ secrets.CONTAINER_REGISTRY_PASSWORD }} \
-            -dc "$CONTAINER_REGISTRY/push-helm-chart" \
-            -du ${{ secrets.GH_CONTAINER_REGISTRY_USERNAME }} \
-            -dp ${{ secrets.GH_CONTAINER_REGISTRY_PASSWORD }} \
+            -r "$CONTAINER_REGISTRY/push-helm-chart" \
+            -s ${{ secrets.GH_CONTAINER_REGISTRY_USERNAME }} \
+            -v ${{ secrets.GH_CONTAINER_REGISTRY_PASSWORD }} \
         env:
           CONTAINER_REGISTRY: ${{ secrets.GH_CONTAINER_REGISTRY }}

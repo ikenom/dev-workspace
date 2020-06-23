@@ -1,8 +1,9 @@
-docker build \
-  --build-arg HELM_CHART_NAME=$(HELM_CHART_NAME) \
-  --build-arg CONTAINER_REGISTRY=$(CONTAINER_REGISTRY) \
-  --build-arg CONTAINER_REGISTRY_USERNAME=$(CONTAINER_REGISTRY_USERNAME) \
-  --build-arg CONTAINER_REGISTRY_PASSWORD=$(CONTAINER_REGISTRY_PASSWORD) \
-  -t deploy-helm \
-  .
-docker run deploy-helm
+#!/bin/bash
+
+docker build -t deploy-helm .
+docker run \
+  --env HELM_CHART_NAME=$HELM_CHART_NAME \
+  --env CONTAINER_REGISTRY=$CONTAINER_REGISTRY \
+  --env CONTAINER_REGISTRY_USERNAME=$CONTAINER_REGISTRY_USERNAME \
+  --env CONTAINER_REGISTRY_PASSWORD=$CONTAINER_REGISTRY_PASSWORD \
+  deploy-helm

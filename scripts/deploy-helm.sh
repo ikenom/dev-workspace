@@ -1,7 +1,8 @@
 docker build \
-  --build-arg CONTAINER_REGISTRY=ikenom.azurecr.io \
-  --build-arg CONTAINER_REGISTRY_USERNAME=ikenom \
-  --build-arg CONTAINER_REGISTRY_PASSWORD=JVBGYF5K6j8LA0oxGj1L9Ndw78/J4iH2 \
+  --build-arg HELM_CHART_NAME=$(HELM_CHART_NAME) \
+  --build-arg CONTAINER_REGISTRY=$(CONTAINER_REGISTRY) \
+  --build-arg CONTAINER_REGISTRY_USERNAME=$(CONTAINER_REGISTRY_USERNAME) \
+  --build-arg CONTAINER_REGISTRY_PASSWORD=$(CONTAINER_REGISTRY_PASSWORD) \
   -t deploy-helm \
   .
 docker run deploy-helm

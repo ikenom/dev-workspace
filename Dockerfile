@@ -1,5 +1,8 @@
 FROM dtzar/helm-kubectl
 
+ARG HELM_CHART_NAME
+ENV HELM_CHART_NAME ${HELM_CHART_NAME}
+
 ARG CONTAINER_REGISTRY
 ENV CONTAINER_REGISTRY ${CONTAINER_REGISTRY}
 
@@ -19,4 +22,4 @@ ENV HELM_EXPERIMENTAL_OCI 1
 COPY scripts/deploy-helm-entrypoint.sh ${APP_HOME}/k8
 WORKDIR ${APP_HOME}/k8
 
-ENTRYPOINT ["sh", "deploy-helm-entrypoint.sh"]
+ENTRYPOINT ["bash", "deploy-helm-entrypoint.sh"]

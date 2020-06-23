@@ -16,7 +16,7 @@ WORKDIR $APP_HOME
 COPY . .
 
 ENV HELM_EXPERIMENTAL_OCI 1
-COPY deploy-helm.sh ${APP_HOME}/k8
+COPY scripts/deploy-helm-entrypoint.sh ${APP_HOME}/k8
 WORKDIR ${APP_HOME}/k8
 
-ENTRYPOINT ["sh", "deploy-helm.sh"]
+ENTRYPOINT ["sh", "deploy-helm-entrypoint.sh"]

@@ -1,2 +1,2 @@
-FROM ikenom.azurecr.io/push-helm-chart
+FROM docker.pkg.github.com/ikenom/push-helm-chart/push-helm-chart
 COPY k8 .
